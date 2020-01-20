@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+    python:
+        ports: 
+            - 90:80
+        command: --reload
+        build: ./python
+        volumes: 
+            - ./python:/var/task
+        environment: 
+            - PORT=80
+            - PYTHONUNBUFFERED=1
+            - DOCKER_LAMBDA_STAY_OPEN=1
+            - DOCKER_LAMBDA_WATCH=1
